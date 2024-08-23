@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-download-url:
+            ${{ vars.ENV == 'dev' && 'http://localhost:3000/bun-linux-x64.zip' || 'https://github.com/oven-sh/bun/releases/latest/download/bun-linux-x64.zip' }}
+            # - serve the bun binary from a local server when in development
+            # act --action-offline-mode --var ENV=dev -j build
+            # cd /media/mohamed/packup/Code/Random/08/npm-package/1-bun-bunserver && bun index.ts
+
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('**/bun.lockb') }}
+
+      - name: Install dependencies
+        run: bun i
+
+      - name: Run CI
+        run: bun run ci

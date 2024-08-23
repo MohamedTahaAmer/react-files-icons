@@ -1,0 +1,19 @@
+{
+	"name": "mohamed-amer-learning-npm-100",
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"build": "tsup src/index.ts --dts --format cjs,esm --out-dir dist",
+		"lint": "tsc",
+		"dev": "bun test --watch",
+		"test": "bun test",
+		"ci": "bun run lint && bun run test && bun run build"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"tsup": "^8.2.4"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}
