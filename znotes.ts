@@ -24,8 +24,12 @@
 8- CD AKA 'release'
 	add "release": "bun run ci && changeset publish" to package.json scripts
 	then add the 'release.yml' file
-	allow the github action to write to the repo
+	allow the github action to write to the repo, and to create and approve pull requests
+		- settings> actions> general> Allow GitHub Actions to create and approve pull requests
 	add the 'NPM_TOKEN' to the secrets in the repo
+		- settings> actions> secrets> new repository secret
+	get the 'NPM_TOKEN' from the npm website
+		make it a classic token instead of granular one
 */
 //#endregion
 //#region // < Notes
