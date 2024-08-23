@@ -7,12 +7,25 @@
 			"@/*": ["./src/*"]
 		}
 3- `bun i -d tsup`, in package.json scripts: "build": "tsup src/index.ts --dts --minify --format cjs --out-dir dist"
+	add to your package.json file: 
+		"main": "./dist/index.js", // - this is for cjs
+		"module": "./dist/index.mjs", // - this is for esm
+		"types": "./dist/index.d.ts", // - this is for types
 4- make sure that noEmit is 'true' in tsconfig.json and in package.json scripts: 'lint': 'tsc'
 5- testing
   add "dev": "bun test --watch" to package.json scripts
   add "test": "bun test" to package.json scripts
 6- CI
 	add "ci": "bun run lint && bun run test && bun run build" to package.json scripts
+	then add the 'ci.yml' file
+7- manage releases
+	`bun i -d @changesets/cli` `bunx changeset init`  
+	add "version": "0.0.1" to your package.json file then `bunx changeset` to create a new changeset for the new version
+8- CD AKA 'release'
+	add "release": "bun run ci && changeset publish" to package.json scripts
+	then add the 'release.yml' file
+	allow the github action to write to the repo
+	add the 'NPM_TOKEN' to the secrets in the repo
 */
 //#endregion
 //#region // < Notes
