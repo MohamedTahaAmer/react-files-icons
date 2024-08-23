@@ -6,6 +6,7 @@
 	"type": "module",
 	"version": "0.0.2",
 	"license": "MIT",
+	"author": "Mohamed Amer",
 	"scripts": {
 		"build": "tsup src/index.ts --dts --format cjs,esm --out-dir dist",
 		"lint": "tsc",

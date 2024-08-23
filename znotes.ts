@@ -21,6 +21,7 @@
 7- manage releases
 	`bun i -d @changesets/cli` `bunx changeset init`  
 	add "version": "0.0.1" to your package.json file then `bunx changeset` to create a new changeset for the new version
+	change 'restricted' to 'public' in the changeset config file
 8- CD AKA 'release'
 	add "release": "bun run ci && changeset publish" to package.json scripts
 	then add the 'release.yml' file
