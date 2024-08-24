@@ -2,9 +2,9 @@
 	"name": "mohamed-amer-learning-npm-100",
 	"type": "module",
 	"version": "0.0.5",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"main": "./dist/cjs/index.cjs",
+	"module": "./dist/esm/index.js",
+	"types": "./dist/esm/index.d.ts",
 	"files": [
 		"dist"
 	],
@@ -23,7 +23,9 @@
 	"license": "MIT",
 	"author": "Mohamed Amer",
 	"scripts": {
-		"build": "tsup src/index.ts src/icons --dts --format cjs,esm --out-dir dist",
+		"build": "bun run build:esm && bun run build:cjs",
+		"build:esm": "tsup src/index.ts src/icons --dts --format esm --out-dir dist/esm",
+		"build:cjs": "tsup src/index.ts src/icons --format cjs --out-dir dist/cjs",
 		"lint": "tsc",
 		"dev": "bun test --watch",
 		"test": "bun test",

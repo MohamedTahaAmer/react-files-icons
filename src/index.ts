@@ -6,15 +6,15 @@ export function numToReadableBytes(bytes: number) {
 	const units = ["B", "KB", "MB", "GB", "TB"]
 	let unitIndex = 0
 
+	let transformedBytes = bytes
 	while (bytes >= 1024 && unitIndex < units.length - 1) {
-		bytes /= 1024
+		transformedBytes /= 1024
 		unitIndex++
 	}
 
 	return `${bytes.toFixed(2)} ${units[unitIndex]}`
 }
-
-export function getObjSize(obj: any) {
+export function getObjSize(obj: unknown) {
 	const json = JSON.stringify(obj)
 	return numToReadableBytes(Buffer.byteLength(json, "utf8"))
 }
