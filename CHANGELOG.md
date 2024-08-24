@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.2.0
+
+### Minor Changes
+
+- e06d986: Update the package entrypoints and structure
+
 ## 0.1.0
 
 ### Minor Changes
