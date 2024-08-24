@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.2.1
+
+### Patch Changes
+
+- 50df929: Update the build out-dir
+
 ## 0.2.0
 
 ### Minor Changes
