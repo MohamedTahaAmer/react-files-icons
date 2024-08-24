@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.1.0
+
+### Minor Changes
+
+- 0cc589c: Add the icons
+
 ## 0.0.5
 
 ### Patch Changes
