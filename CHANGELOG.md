@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.0.4
+
+### Patch Changes
+
+- f514329: Change the entrypoints to the package and add files and exports fields
+
 ## 0.0.3
 
 ### Patch Changes
