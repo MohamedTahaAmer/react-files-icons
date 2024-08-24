@@ -2,30 +2,43 @@
 	"name": "mohamed-amer-learning-npm-100",
 	"type": "module",
 	"version": "0.0.5",
-	"main": "./dist/cjs/index.cjs",
-	"module": "./dist/esm/index.js",
-	"types": "./dist/esm/index.d.ts",
+	"main": "dist/cjs/vs-code-file-icons.cjs",
+	"module": "dist/esm/vs-code-file-icons.js",
+	"types": "dist/esm/vs-code-file-icons.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"icons.cjs",
+		"icons.js",
+		"icons.d.ts"
 	],
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/index.d.ts",
-				"default": "./dist/index.js"
+				"types": "./dist/esm/vs-code-file-icons.d.ts",
+				"default": "./dist/esm/vs-code-file-icons.js"
 			},
 			"require": {
-				"types": "./dist/index.d.cts",
-				"default": "./dist/index.cjs"
+				"default": "./dist/cjs/vs-code-file-icons.d.cts"
+			}
+		},
+		"./icons": {
+			"import": {
+				"types": "./icons.d.ts",
+				"default": "./icons.js"
+			},
+			"require": {
+				"default": "./icons.cjs"
 			}
 		}
 	},
 	"license": "MIT",
 	"author": "Mohamed Amer",
 	"scripts": {
-		"build": "bun run build:esm && bun run build:cjs",
-		"build:esm": "tsup src/index.ts src/icons --dts --format esm --out-dir dist/esm",
-		"build:cjs": "tsup src/index.ts src/icons --format cjs --out-dir dist/cjs",
+		"build": "bun run build-vs-code-file-icons:esm && bun run build-vs-code-file-icons:cjs && bun run build-icons:esm && bun run build-icons:cjs",
+		"build-vs-code-file-icons:esm": "tsup src/vs-code-file-icons.ts src/icons --dts --format esm --out-dir dist/esm",
+		"build-vs-code-file-icons:cjs": "tsup src/vs-code-file-icons.ts src/icons --format cjs --out-dir dist/cjs",
+		"build-icons:esm": "tsup src/icons.ts --dts --format esm --out-dir dist",
+		"build-icons:cjs": "tsup src/icons.ts --format cjs --out-dir dist",
 		"lint": "tsc",
 		"dev": "bun test --watch",
 		"test": "bun test",
