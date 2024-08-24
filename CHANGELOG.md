@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.3.0
+
+### Minor Changes
+
+- 4d9d0d0: working version but without code splitting
+
 ## 0.2.1
 
 ### Patch Changes

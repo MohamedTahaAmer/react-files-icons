@@ -1,7 +1,7 @@
 {
 	"name": "mohamed-amer-learning-npm-100",
 	"type": "module",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"main": "dist/vs-code-file-icons.js",
 	"types": "dist/vs-code-file-icons.d.ts",
 	"files": [
