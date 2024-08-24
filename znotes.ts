@@ -6,12 +6,30 @@
 		"paths": {
 			"@/*": ["./src/*"]
 		}
-3- `bun i -d tsup`, in package.json scripts: "build": "tsup src/index.ts --dts --minify --format cjs --out-dir dist"
+3- `bun i -d tsup`, in package.json scripts: "build": "tsup src/index.ts --dts --format cjs,esm --out-dir dist"
 	add to your package.json file: 
-		"main": "./dist/index.js", // - this is for cjs
-		"module": "./dist/index.mjs", // - this is for esm
+	// -- these are for old bundlers, the exports syntax is the new official way of defining the entry points to your package
+		"main": "./dist/index.cjs", // - this is for cjs
+		"module": "./dist/index.js", // - this is for esm
 		"types": "./dist/index.d.ts", // - this is for types
-4- make sure that noEmit is 'true' in tsconfig.json and in package.json scripts: 'lint': 'tsc'
+	// -- files to be included in the package
+		"files": [
+			"dist"
+		],
+	// -- this is the new way to define the entry points to your package
+		"exports": {
+			".": {
+				"import": {
+					"types": "./dist/index.d.ts",
+					"default": "./dist/index.js"
+				},
+				"require": {
+					"types": "./dist/index.d.cts",
+					"default": "./dist/index.cjs"
+				}
+			}
+		},
+4- make sure that noEmit is 'true' in tsconfig.json and in package.json scripts, "lint": "tsc"
 5- testing
   add "dev": "bun test --watch" to package.json scripts
   add "test": "bun test" to package.json scripts
