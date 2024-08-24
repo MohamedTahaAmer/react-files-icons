@@ -2,9 +2,8 @@
 	"name": "mohamed-amer-learning-npm-100",
 	"type": "module",
 	"version": "0.2.1",
-	"main": "dist/cjs/vs-code-file-icons.cjs",
-	"module": "dist/esm/vs-code-file-icons.js",
-	"types": "dist/esm/vs-code-file-icons.d.ts",
+	"main": "dist/vs-code-file-icons.js",
+	"types": "dist/vs-code-file-icons.d.ts",
 	"files": [
 		"dist",
 		"icons.cjs",
@@ -14,31 +13,23 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/esm/vs-code-file-icons.d.ts",
-				"default": "./dist/esm/vs-code-file-icons.js"
-			},
-			"require": {
-				"default": "./dist/cjs/vs-code-file-icons.d.cts"
+				"types": "./dist/vs-code-file-icons.d.ts",
+				"default": "./dist/vs-code-file-icons.js"
 			}
 		},
 		"./icons": {
 			"import": {
-				"types": "./icons.d.ts",
-				"default": "./icons.js"
-			},
-			"require": {
-				"default": "./icons.cjs"
+				"types": "./dist/icons.d.ts",
+				"default": "./dist/icons.js"
 			}
 		}
 	},
 	"license": "MIT",
 	"author": "Mohamed Amer",
 	"scripts": {
-		"build": "bun run build-vs-code-file-icons:esm && bun run build-vs-code-file-icons:cjs && bun run build-icons:esm && bun run build-icons:cjs",
-		"build-vs-code-file-icons:esm": "tsup src/vs-code-file-icons.ts src/icons --dts --format esm --out-dir dist/esm",
-		"build-vs-code-file-icons:cjs": "tsup src/vs-code-file-icons.ts src/icons --format cjs --out-dir dist/cjs",
-		"build-icons:esm": "tsup src/icons.ts --dts --format esm --out-dir .",
-		"build-icons:cjs": "tsup src/icons.ts --format cjs --out-dir .",
+		"build": "bun run clean && bun run build-vs-code-file-icons:esm",
+		"build-vs-code-file-icons:esm": "tsup src/vs-code-file-icons.tsx src/icons.ts src/icons --dts --format esm --out-dir dist",
+		"clean": "rm -rf dist",
 		"lint": "tsc",
 		"dev": "bun test --watch",
 		"test": "bun test",
@@ -52,7 +43,7 @@
 		"tsup": "^8.2.4",
 		"typescript": "^5.0.0"
 	},
-	"dependencies": {
+	"peerDependencies": {
 		"react": "^18.3.1"
 	}
 }

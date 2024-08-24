@@ -1,61 +1,85 @@
-// import { expect, describe, it } from "bun:test"
-// import { getObjSize, numToReadableBytes, unique } from "../.."
+import { expect, describe, it } from "bun:test"
+import { getIconNameForFile, getIconNameForFolder, getIconNameForOpenFolder } from "@/get-icons"
 
-// // unique
-// describe("unique", () => {
-// 	it("should return an array with unique values", () => {
-// 		expect(unique([1, 2, 2, 3, 3, 3])).toEqual([1, 2, 3])
-// 	})
-// })
+describe("Icons test", () => {
+	describe("files", () => {
+		it("should return icons by special filenames", () => {
+			expect([
+				getIconNameForFile("manifest.bak"),
+				getIconNameForFile(".nvmrc"),
+				getIconNameForFile("phpunit"),
+				getIconNameForFile("phpunit.xml.dist"),
+				getIconNameForFile("rollup.config.js"),
+				getIconNameForFile("tsconfig.json"),
+				getIconNameForFile("tsconfig.spec.json"),
+				getIconNameForFile("webpack.base.conf.js"),
+				getIconNameForFile(".eslintrc.yaml"),
+			]).toEqual([
+				"file_type_manifest_bak.svg",
+				"file_type_node.svg",
+				"file_type_phpunit.svg",
+				"file_type_phpunit.svg",
+				"file_type_rollup.svg",
+				"file_type_tsconfig.svg",
+				"file_type_tsconfig.svg",
+				"file_type_webpack.svg",
+				"file_type_eslint.svg",
+			])
+		})
 
-// describe("numToReadableBytes", () => {
-// 	it("should convert 1024 to 1 KB", () => {
-// 		expect(numToReadableBytes(1024)).toBe("1.00 KB")
-// 	})
+		it("should return icons by special filenames, but defined by vscode langs", () => {
+			expect([getIconNameForFile("Jenkinsfile"), getIconNameForFile("guardfile")]).toEqual([
+				"file_type_groovy.svg",
+				"file_type_ruby.svg",
+			])
+		})
 
-// 	it("should convert 1024 * 1024 to 1 MB", () => {
-// 		expect(numToReadableBytes(1024 * 1024)).toBe("1.00 MB")
-// 	})
+		it("should return icons by extensions", () => {
+			expect([
+				getIconNameForFile("All.test.ts"),
+				getIconNameForFile("All.test.tsx"),
+				getIconNameForFile("package.nls.de.json"),
+				getIconNameForFile("content.js.map"),
+			]).toEqual([
+				"file_type_testts.svg",
+				"file_type_testts.svg",
+				"file_type_light_json.svg",
+				"file_type_light_jsmap.svg",
+			])
+		})
 
-// 	it("should convert 1024 * 1024 * 1024 to 1 GB", () => {
-// 		expect(numToReadableBytes(1024 * 1024 * 1024)).toBe("1.00 GB")
-// 	})
+		it("should return icons by languages", () => {
+			expect([
+				getIconNameForFile("content.js"),
+				getIconNameForFile("Index.script.ts"),
+				getIconNameForFile("__main__.py"),
+			]).toEqual(["file_type_light_js.svg", "file_type_typescript.svg", "file_type_python.svg"])
+		})
 
-// 	it("should convert 1024 * 1024 * 1024 * 1024 to 1 TB", () => {
-// 		expect(numToReadableBytes(1024 * 1024 * 1024 * 1024)).toBe("1.00 TB")
-// 	})
+		it("should return default icons for unknown", () => {
+			expect([getIconNameForFile("undefined")]).toEqual(["default_file.svg"])
+		})
+	})
 
-// 	it("should convert a number less than 1024 to itself", () => {
-// 		expect(numToReadableBytes(512)).toBe("512.00 B")
-// 	})
+	describe("folders", () => {
+		it("should return icons for folders", () => {
+			expect([getIconNameForFolder("images"), getIconNameForFolder("src"), getIconNameForFolder("locale")]).toEqual([
+				"folder_type_images.svg",
+				"folder_type_src.svg",
+				"folder_type_locale.svg",
+			])
+		})
 
-// 	it("should convert a number less than 1 to itself", () => {
-// 		expect(numToReadableBytes(0.5)).toBe("0.50 B")
-// 	})
-// })
+		it("should return icons for opened folders", () => {
+			expect([
+				getIconNameForOpenFolder("images"),
+				getIconNameForOpenFolder("src"),
+				getIconNameForOpenFolder("locale"),
+			]).toEqual(["folder_type_images_opened.svg", "folder_type_src_opened.svg", "folder_type_locale_opened.svg"])
+		})
 
-// describe("getObjSize", () => {
-// 	it("should return the size of an empty object", () => {
-// 		let obj = {}
-// 		let size = JSON.stringify(obj).length
-// 		expect(getObjSize(obj)).toBe(`${size}.00 B`)
-// 	})
-
-// 	it("should return the size of an object with a single property", () => {
-// 		let obj = { foo: "bar" }
-// 		let size = JSON.stringify(obj).length
-// 		expect(getObjSize(obj)).toBe(`${size}.00 B`)
-// 	})
-
-// 	it("should return the size of an object with multiple properties", () => {
-// 		let obj = { foo: "bar", baz: "qux" }
-// 		let size = JSON.stringify(obj).length
-// 		expect(getObjSize(obj)).toBe(`${size}.00 B`)
-// 	})
-
-// 	it("should return the size of an object with a nested property", () => {
-// 		let obj = { foo: { bar: "baz" } }
-// 		let size = JSON.stringify(obj).length
-// 		expect(getObjSize(obj)).toBe(`${size}.00 B`)
-// 	})
-// })
+		it("should return default icons for unknown", () => {
+			expect([getIconNameForOpenFolder("undefined")]).toEqual(["default_folder_opened.svg"])
+		})
+	})
+})
