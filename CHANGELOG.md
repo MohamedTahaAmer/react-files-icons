@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.0.5
+
+### Patch Changes
+
+- d22b3e7: Add getObjSize
+
 ## 0.0.4
 
 ### Patch Changes
