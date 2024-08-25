@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.4.0
+
+### Minor Changes
+
+- f675440: Achieve code splitting when getting the Icons directly and sending all the Icons when dynamically loading them
+
 ## 0.3.0
 
 ### Minor Changes
