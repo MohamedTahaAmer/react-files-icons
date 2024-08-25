@@ -2,8 +2,8 @@
 	"name": "mohamed-amer-learning-npm-100",
 	"type": "module",
 	"version": "0.3.0",
-	"main": "dist/vs-code-file-icons.js",
-	"types": "dist/vs-code-file-icons.d.ts",
+	"main": "dist/main.js",
+	"types": "dist/main.d.ts",
 	"files": [
 		"dist",
 		"icons.cjs",
@@ -13,8 +13,8 @@
 	"exports": {
 		".": {
 			"import": {
-				"types": "./dist/vs-code-file-icons.d.ts",
-				"default": "./dist/vs-code-file-icons.js"
+				"types": "./dist/main.d.ts",
+				"default": "./dist/main.js"
 			}
 		},
 		"./icons": {
@@ -27,13 +27,12 @@
 	"license": "MIT",
 	"author": "Mohamed Amer",
 	"scripts": {
-		"build": "bun run clean && bun run build-vs-code-file-icons:esm",
-		"build-vs-code-file-icons:esm": "tsup src/vs-code-file-icons.tsx src/icons.ts src/icons --dts --format esm --out-dir dist",
+		"build": "bun run clean && tsc",
 		"clean": "rm -rf dist",
-		"lint": "tsc",
+		"lint": "tsc --noEmit",
 		"dev": "bun test --watch",
 		"test": "bun test",
-		"ci": "bun run lint && bun run test && bun run build",
+		"ci": "bun run test && bun run build",
 		"release": "bun run ci && changeset publish"
 	},
 	"devDependencies": {

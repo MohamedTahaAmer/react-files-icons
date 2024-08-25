@@ -1,5 +1,5 @@
 import { expect, describe, it } from "bun:test"
-import { getIconNameForFile, getIconNameForFolder, getIconNameForOpenFolder } from "@/get-icons"
+import { getIconNameForFile, getIconNameForFolder, getIconNameForOpenFolder } from "../src/get-icons"
 
 describe("Icons test", () => {
 	describe("files", () => {
