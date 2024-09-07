@@ -42,6 +42,6 @@ export let GetIcon = ({ name, type, ...props }: SvgsForTheClientProps) => {
 	return <Icon {...props} />
 }
 
-export let IconForFile = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="File" />
-export let IconForFolder = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="Folder" />
-export let IconForOpenFolder = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="OpenFolder" />
+export let FileIcon = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="File" />
+export let FolderIcon = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="Folder" />
+export let OpenFolderIcon = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="OpenFolder" />
