@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.5.0
+
+### Minor Changes
+
+- fce60f6: Change the package's API
+
 ## 0.4.0
 
 ### Minor Changes
