@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.0
+
+### Minor Changes
+
+- af7b665: Add support for suspended dynamic Icons
+
 ## 0.5.0
 
 ### Minor Changes
