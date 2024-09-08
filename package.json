@@ -17,6 +17,12 @@
 				"default": "./dist/main.js"
 			}
 		},
+		"./suspended": {
+			"import": {
+				"types": "./dist/suspended-icons.d.ts",
+				"default": "./dist/suspended-icons.js"
+			}
+		},
 		"./icons": {
 			"import": {
 				"types": "./dist/icons.d.ts",
