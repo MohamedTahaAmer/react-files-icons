@@ -1,9 +1,6 @@
 <p align="center">
-  <a href="https://github.com/MohamedTahaAmer/react-files-icons#gh-light-mode-only">
-    <img src="https://utfs.io/f/b9b8de02-2d81-431a-8b09-199f3f24e224-8ndh56.svg#gh-light-mode-only" alt="React-Files-Icons" width="200">
-  </a>
-  <a href="https://github.com/MohamedTahaAmer/react-files-icons#gh-dark-mode-only">
-    <img src="https://utfs.io/f/b9b8de02-2d81-431a-8b09-199f3f24e224-8ndh56.svg#gh-dark-mode-only" alt="React-Files-Icons" width="200">
+  <a href="https://github.com/MohamedTahaAmer/react-files-icons">
+    <img src="https://utfs.io/f/b9b8de02-2d81-431a-8b09-199f3f24e224-8ndh56.svg" alt="React-Files-Icons" width="200">
   </a>
   <a href="https://github.com/MohamedTahaAmer/react-files-icons">
   <h1 align="center">React Files Icons</h1>
