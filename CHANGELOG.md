@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.4
+
+### Patch Changes
+
+- d39b672: Link the react files icons preview Demo
+
 ## 0.6.3
 
 ### Patch Changes
