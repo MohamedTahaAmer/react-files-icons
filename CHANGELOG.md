@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.2
+
+### Patch Changes
+
+- 826dced: New patch after updateing the package.json file
+
 ## 0.6.1
 
 ### Patch Changes
