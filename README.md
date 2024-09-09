@@ -99,4 +99,4 @@ export default DynamicIcons
 
 # Acknowledgements
 
-This package was inspired by vscode-icons-js, which provided a comprehensive set of file and folder icons. I have adapted the logic from this package to infer the appropriate icon based on the file name, while re-imagining how the icons are delivered and used in a React context.
+This package was inspired by [vscode-icons-js](https://www.npmjs.com/package/vscode-icons-js), which provided a comprehensive set of file and folder icons in SVG format. I have used these SVGs, and adapted the logic from this package to infer the appropriate icon based on the file name, while re-imagining how the icons are delivered and used in a React context.
