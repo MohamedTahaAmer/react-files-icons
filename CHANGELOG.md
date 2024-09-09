@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.7.0
+
+### Minor Changes
+
+- 9a9a1b9: Add aria-label to all the returned Dynamic Icons
+
 ## 0.6.5
 
 ### Patch Changes
