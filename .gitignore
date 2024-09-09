@@ -176,5 +176,6 @@ dist
 
 biome.json
 znotes.ts
+y.md
 icons.*
 !src/icons.*

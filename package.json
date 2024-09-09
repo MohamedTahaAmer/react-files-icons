@@ -1,54 +1,54 @@
 {
-	"name": "react-files-icons",
-	"type": "module",
-	"version": "0.6.0",
-	"main": "dist/main.js",
-	"types": "dist/main.d.ts",
-	"files": [
-		"dist",
-		"icons.cjs",
-		"icons.js",
-		"icons.d.ts"
-	],
-	"exports": {
-		".": {
-			"import": {
-				"types": "./dist/main.d.ts",
-				"default": "./dist/main.js"
-			}
-		},
-		"./suspended": {
-			"import": {
-				"types": "./dist/suspended-icons.d.ts",
-				"default": "./dist/suspended-icons.js"
-			}
-		},
-		"./icons": {
-			"import": {
-				"types": "./dist/icons.d.ts",
-				"default": "./dist/icons.js"
-			}
-		}
-	},
-	"license": "MIT",
-	"author": "Mohamed Amer",
-	"scripts": {
-		"build": "bun run clean && tsc",
-		"clean": "rm -rf dist",
-		"lint": "tsc --noEmit",
-		"dev": "bun test --watch",
-		"test": "bun test",
-		"ci": "bun run test && bun run build",
-		"release": "bun run ci && changeset publish"
-	},
-	"devDependencies": {
-		"@changesets/cli": "^2.27.7",
-		"@types/bun": "latest",
-		"@types/react": "^18.3.4",
-		"tsup": "^8.2.4",
-		"typescript": "^5.0.0"
-	},
-	"peerDependencies": {
-		"react": "^18.3.1"
-	}
+  "name": "react-files-icons",
+  "type": "module",
+  "version": "0.6.0",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist",
+    "icons.cjs",
+    "icons.js",
+    "icons.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.ts",
+        "default": "./dist/main.js"
+      }
+    },
+    "./suspended": {
+      "import": {
+        "types": "./dist/suspended-icons.d.ts",
+        "default": "./dist/suspended-icons.js"
+      }
+    },
+    "./icons": {
+      "import": {
+        "types": "./dist/icons.d.ts",
+        "default": "./dist/icons.js"
+      }
+    }
+  },
+  "license": "MIT",
+  "author": "Mohamed Amer",
+  "scripts": {
+    "build": "bun run clean && tsc",
+    "clean": "rm -rf dist",
+    "lint": "tsc --noEmit",
+    "dev": "bun test --watch",
+    "test": "bun test",
+    "ci": "bun run test && bun run build",
+    "release": "bun run ci && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "@types/bun": "latest",
+    "@types/react": "^18.3.4",
+    "tsup": "^8.2.4",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1"
+  }
 }

@@ -3,28 +3,28 @@ import { icons } from "./icons"
 import { getIconNameForFile, getIconNameForFolder, getIconNameForOpenFolder } from "./get-icons"
 
 let svgFileNameToTSX = (svgFileName: string) => {
-	let camelCaseFileName = svgFileName.replace(/[_-]([a-z])/g, (_, p1: string) => p1.toUpperCase())
-	const pascalCaseFileName = camelCaseFileName.charAt(0).toUpperCase() + camelCaseFileName.slice(1)
-	return pascalCaseFileName.replace(".svg", "")
+  let camelCaseFileName = svgFileName.replace(/[_-]([a-z])/g, (_, p1: string) => p1.toUpperCase())
+  const pascalCaseFileName = camelCaseFileName.charAt(0).toUpperCase() + camelCaseFileName.slice(1)
+  return pascalCaseFileName.replace(".svg", "")
 }
 
 let getTSXIcon = (svgName: string) => {
-	let tsxIconName = svgFileNameToTSX(svgName) as keyof typeof icons
-	return icons[tsxIconName]
+  let tsxIconName = svgFileNameToTSX(svgName) as keyof typeof icons
+  return icons[tsxIconName]
 }
 
 export let getIcon = (name: string, type: "File" | "Folder" | "OpenFolder") => {
-	if (type === "File") {
-		let svgFileName = getIconNameForFile(name) ?? ""
-		return getTSXIcon(svgFileName) ?? icons.DefaultFile
-	} else if (type === "Folder") {
-		let svgFileName = getIconNameForFolder(name)
-		return getTSXIcon(svgFileName) ?? icons.DefaultFolder
-	} else if (type === "OpenFolder") {
-		let svgFileName = getIconNameForOpenFolder(name)
-		return getTSXIcon(svgFileName) ?? icons.DefaultFolderOpened
-	}
-	return icons.DefaultFile
+  if (type === "File") {
+    let svgFileName = getIconNameForFile(name) ?? ""
+    return getTSXIcon(svgFileName) ?? icons.DefaultFile
+  } else if (type === "Folder") {
+    let svgFileName = getIconNameForFolder(name)
+    return getTSXIcon(svgFileName) ?? icons.DefaultFolder
+  } else if (type === "OpenFolder") {
+    let svgFileName = getIconNameForOpenFolder(name)
+    return getTSXIcon(svgFileName) ?? icons.DefaultFolderOpened
+  }
+  return icons.DefaultFile
 }
 
 export let getIconForFile = (name: string) => getIcon(name, "File")
@@ -33,13 +33,13 @@ export let getIconForOpenFolder = (name: string) => getIcon(name, "OpenFolder")
 
 type IconTypes = "File" | "Folder" | "OpenFolder"
 interface SvgsForTheClientProps extends SVGProps<SVGSVGElement> {
-	name: string
-	type: IconTypes
+  name: string
+  type: IconTypes
 }
 
 export let GetIcon = ({ name, type, ...props }: SvgsForTheClientProps) => {
-	let Icon = getIcon(name, type)
-	return <Icon {...props} />
+  let Icon = getIcon(name, type)
+  return <Icon {...props} />
 }
 
 export let FileIcon = (props: Omit<SvgsForTheClientProps, "type">) => <GetIcon {...props} type="File" />

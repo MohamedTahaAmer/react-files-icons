@@ -48,13 +48,13 @@ yarn add react-files-icons
 import { FileTypeCss, FolderTypeSrc, FolderTypeSrcOpened } from "react-files-icons/icons"
 
 function Icons() {
-	return (
-		<>
-			<FileTypeCss className="size-24" aria-label="Css Icon" />
-			<FolderTypeSrc className="size-24" aria-label="Folder Icon" />
-			<FolderTypeSrcOpened className="size-24" aria-label="Open Folder Icon" />
-		</>
-	)
+  return (
+    <>
+      <FileTypeCss className="size-24" aria-label="Css Icon" />
+      <FolderTypeSrc className="size-24" aria-label="Folder Icon" />
+      <FolderTypeSrcOpened className="size-24" aria-label="Open Folder Icon" />
+    </>
+  )
 }
 export default Icons
 ```
@@ -68,13 +68,13 @@ export default Icons
 import { FileIcon, FolderIcon, OpenFolderIcon } from "react-files-icons"
 
 function DynamicIcons({ name }) {
-	return (
-		<>
-			<FileIcon name="index.css" />
-			<FolderIcon name="src" />
-			<OpenFolderIcon name="src" />
-		</>
-	)
+  return (
+    <>
+      <FileIcon name="index.css" />
+      <FolderIcon name="src" />
+      <OpenFolderIcon name="src" />
+    </>
+  )
 }
 export default DynamicIcons
 ```
@@ -89,13 +89,13 @@ export default DynamicIcons
 import { SuspendedFileIcon, SuspendedFolderIcon, SuspendedOpenFolderIcon } from "react-files-icons/suspended"
 
 function DynamicIcons({ name }) {
-	return (
-		<>
-			<SuspendedFileIcon name="index.css" />
-			<SuspendedFolderIcon name="src" />
-			<SuspendedOpenFolderIcon name="src" />
-		</>
-	)
+  return (
+    <>
+      <SuspendedFileIcon name="index.css" />
+      <SuspendedFolderIcon name="src" />
+      <SuspendedOpenFolderIcon name="src" />
+    </>
+  )
 }
 export default DynamicIcons
 ```
