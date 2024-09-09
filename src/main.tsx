@@ -36,13 +36,13 @@ interface SvgsForTheClientProps extends SVGProps<SVGSVGElement> {
   name: string
   type: IconTypes
 }
-export type DynamicIcon = Omit<SvgsForTheClientProps, "type">
+export type DynamicIconType = Omit<SvgsForTheClientProps, "type">
 
 export let GetIcon = ({ name, type, ...props }: SvgsForTheClientProps) => {
   let Icon = getIcon(name, type)
   return <Icon {...props} />
 }
 
-export let FileIcon = (props: DynamicIcon) => <GetIcon {...props} type="File" />
-export let FolderIcon = (props: DynamicIcon) => <GetIcon {...props} type="Folder" />
-export let OpenFolderIcon = (props: DynamicIcon) => <GetIcon {...props} type="OpenFolder" />
+export let FileIcon = (props: DynamicIconType) => <GetIcon {...props} type="File" />
+export let FolderIcon = (props: DynamicIconType) => <GetIcon {...props} type="Folder" />
+export let OpenFolderIcon = (props: DynamicIconType) => <GetIcon {...props} type="OpenFolder" />

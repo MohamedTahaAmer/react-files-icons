@@ -41,7 +41,7 @@ yarn add react-files-icons
 ### 1. Displaying Icons by their direct name.
 
 ```jsx
-// - Only these Icons will be shipped in the client bundle
+// - Only these Icons will be shipped in the client bundle.
 
 import { FileTypeCss, FolderTypeSrc, FolderTypeSrcOpened } from "react-files-icons/icons"
 
@@ -60,8 +60,8 @@ export default Icons
 ### 2. Inferring the Icon name based on the file or folder name.
 
 ```jsx
-// - The Icon name will be inferred from the name prop
-// - All Icons will be shipped in the client bundle
+// - The Icon name will be inferred from the name prop.
+// - All Icons will be shipped in the client bundle.
 
 import { FileIcon, FolderIcon, OpenFolderIcon } from "react-files-icons"
 
@@ -80,9 +80,8 @@ export default DynamicIcons
 ### 3. Lazy Loading Icons
 
 ```jsx
-// - The Icon name will be inferred from the name prop
-// - Only the 3 default Icons will be shipped in the client build
-// - A placeholder will be displayed until the Icon are fetched from the server after the initial render
+// - The Icon name will be inferred from the name prop.
+// - Icons are fetched from the server after the initial render and a placeholder will be displayed meanwhile.
 
 import { SuspendedFileIcon, SuspendedFolderIcon, SuspendedOpenFolderIcon } from "react-files-icons/suspended"
 
