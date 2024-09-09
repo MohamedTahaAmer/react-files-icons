@@ -30,6 +30,18 @@
       }
     }
   },
+  "repository": "https://github.com/MohamedTahaAmer/react-files-icons",
+  "homepage": "https://github.com/MohamedTahaAmer/react-files-icons",
+  "keywords": [
+    "react",
+    "icons",
+    "files",
+    "react-icons",
+    "react-files-icons",
+    "VSCode",
+    "vite",
+    "Next.JS"
+  ],
   "license": "MIT",
   "author": "Mohamed Amer",
   "scripts": {
