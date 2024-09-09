@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.3
+
+### Patch Changes
+
+- 7d2d422: Remove the release status from the README.md file because it's not working on npmjs.com nor VScode markdown preview and working only on GitHub.
+
 ## 0.6.2
 
 ### Patch Changes
