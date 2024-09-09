@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.5
+
+### Patch Changes
+
+- fe1e9ca: Export DynamicIconType To allow the user of the package to pass the Icons as props
+
 ## 0.6.4
 
 ### Patch Changes
