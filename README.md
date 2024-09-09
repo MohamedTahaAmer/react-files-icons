@@ -15,7 +15,7 @@
 
 `react-files-icons` is a collection of file and folder icons for `React` applications. This package provides 1200 SVG icons for files and folders.
 
-You can pass the file or folder name and we will infer the appropriate Icon to display.
+> You can pass file or folder name and `react file icons` will infer the appropriate Icon to display.
 
 All the Icons are JSX components that accepts all props that can be passed to a JSX Element, allowing for easy styling and total control over the appearance of the icons.
 
@@ -35,6 +35,8 @@ yarn add react-files-icons
 ```
 
 # Example usage
+
+> Sample App: [react-files-icons-preview](https://react-files-icons-preview.vercel.app/)
 
 ### 1. Displaying Icons by their direct name.
 
