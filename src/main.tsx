@@ -13,18 +13,28 @@ let getTSXIcon = (svgName: string) => {
   return icons[tsxIconName]
 }
 
+let svgToAccessibleName = (svgFileName: string) => svgFileName.replace(/\.svg$/, "").replace(/_/g, " ")
+
 export let getIcon = (name: string, type: "File" | "Folder" | "OpenFolder") => {
   if (type === "File") {
     let svgFileName = getIconNameForFile(name) ?? ""
-    return getTSXIcon(svgFileName) ?? icons.DefaultFile
+    let accessibleName = svgToAccessibleName(svgFileName)
+    let Icon = getTSXIcon(svgFileName) ?? icons.DefaultFile
+    return { Icon, accessibleName }
   } else if (type === "Folder") {
     let svgFileName = getIconNameForFolder(name)
-    return getTSXIcon(svgFileName) ?? icons.DefaultFolder
+    let accessibleName = svgToAccessibleName(svgFileName)
+    let Icon = getTSXIcon(svgFileName) ?? icons.DefaultFolder
+    return { Icon, accessibleName }
   } else if (type === "OpenFolder") {
     let svgFileName = getIconNameForOpenFolder(name)
-    return getTSXIcon(svgFileName) ?? icons.DefaultFolderOpened
+    let accessibleName = svgToAccessibleName(svgFileName)
+    let Icon = getTSXIcon(svgFileName) ?? icons.DefaultFolderOpened
+    return { Icon, accessibleName }
   }
-  return icons.DefaultFile
+  let accessibleName = "File"
+  let Icon = icons.DefaultFile
+  return { Icon, accessibleName }
 }
 
 export let getIconForFile = (name: string) => getIcon(name, "File")
@@ -39,8 +49,8 @@ interface SvgsForTheClientProps extends SVGProps<SVGSVGElement> {
 export type DynamicIconType = Omit<SvgsForTheClientProps, "type">
 
 export let GetIcon = ({ name, type, ...props }: SvgsForTheClientProps) => {
-  let Icon = getIcon(name, type)
-  return <Icon {...props} />
+  let { Icon, accessibleName } = getIcon(name, type)
+  return <Icon {...props} aria-label={accessibleName} />
 }
 
 export let FileIcon = (props: DynamicIconType) => <GetIcon {...props} type="File" />
