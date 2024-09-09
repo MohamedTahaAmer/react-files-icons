@@ -11,7 +11,6 @@
   <a href="https://github.com/MohamedTahaAmer/react-files-icons/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/react-files-icons" alt="license"></a>
   <a href="https://www.npmjs.com/package/react-files-icons"><img src="https://img.shields.io/npm/v/react-files-icons" alt="npm package"></a>
   <a href="https://www.npmjs.com/package/react-files-icons"><img src="https://img.shields.io/npm/dw/react-files-icons" alt="npm downloads"></a>
-  <a href="https://github.com/MohamedTahaAmer/react-files-icons/blob/main/.github/workflows/release.yml"><img src="https://github.com/MohamedTahaAmer/react-files-icons/actions/workflows/release.yml/badge.svg" alt="release status"></a>
 </p>
 
 `react-files-icons` is a collection of file and folder icons for `React` applications. This package provides 1200 SVG icons for files and folders.
