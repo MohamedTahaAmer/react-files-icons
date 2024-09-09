@@ -1,5 +1,11 @@
 # mohamed-amer-learning-npm-100
 
+## 0.6.1
+
+### Patch Changes
+
+- 0fc18bb: Update the README.md file
+
 ## 0.6.0
 
 ### Minor Changes
